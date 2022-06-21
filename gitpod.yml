@@ -1,12 +1,12 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: Install PD CLI
-    init: |
+    before: |
       curl https://cli.pipedream.com/linux/amd64/latest/pd.zip --output pd.zip && \
       unzip pd.zip -d pd && \
       sudo mv pd/pd /usr/local/bin/ && \
       rm -r pd && rm pd.zip
-    before: |
+    init: |
       touch ~/.config/pipedream/config &&
       echo "api_key = ${PD_API_KEY}" >> ~/.config/pipedream/config
     command: pd
