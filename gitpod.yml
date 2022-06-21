@@ -7,6 +7,7 @@ tasks:
       sudo mv pd/pd /usr/local/bin/ && \
       rm -r pd && rm pd.zip
     init: |
+      val $(command gp env -e)
       touch ~/.config/pipedream/config &&
       echo "api_key = ${PD_API_KEY}" >> ~/.config/pipedream/config
     command: pd
