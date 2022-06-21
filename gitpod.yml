@@ -5,7 +5,7 @@ tasks:
       curl https://cli.pipedream.com/linux/amd64/latest/pd.zip --output pd.zip && \
       unzip pd.zip -d pd && \
       sudo mv pd/pd /usr/local/bin/ && \
-      rm -r pd && rm pid.zip
+      rm -r pd && rm pd.zip
     before: |
       touch ~/.config/pipedream/config &&
       echo "api_key = ${PD_API_KEY}" >> ~/.config/pipedream/config
